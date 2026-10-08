@@ -16,6 +16,20 @@ const ORG = {'@type':'LocalBusiness','@id':SITE+'/#business',name:BRAND,url:SITE
 const faqLd = faqs => ({'@type':'FAQPage',mainEntity:faqs.map(([q,a])=>({'@type':'Question',name:q,acceptedAnswer:{'@type':'Answer',text:a}}))});
 const crumbLd = c => ({'@type':'BreadcrumbList',itemListElement:c.map(([n,p],i)=>({'@type':'ListItem',position:i+1,name:n,item:SITE+clean(p)}))});
 
+// Mobile floating tab bar (phones only). Center button books; it jumps to the page's own form when there is one.
+const TB_IC = {
+  home:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 12 3l9 7.5"/><path d="M5 9.5V21h14V9.5"/><path d="M10 21v-6h4v6"/></svg>',
+  services:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="5.5" cy="10" r="2"/><circle cx="9.5" cy="5.5" r="2"/><circle cx="14.5" cy="5.5" r="2"/><circle cx="18.5" cy="10" r="2"/><path d="M12 11c-3 0-6 4.5-6 7.2 0 1.7 1.3 2.8 3 2.8 1.2 0 2-.6 3-.6s1.8.6 3 .6c1.7 0 3-1.1 3-2.8C18 15.5 15 11 12 11Z"/></svg>',
+  book:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="5" width="17" height="15.5" rx="2.5"/><path d="M3.5 10h17M8 3v4M16 3v4"/><path d="m9 15 2 2 4-4"/></svg>',
+  areas:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21Z"/><circle cx="12" cy="9.5" r="2.5"/></svg>',
+  guides:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4.5h6a2 2 0 0 1 2 2V20a1.5 1.5 0 0 0-1.5-1.5H4Z"/><path d="M20 4.5h-6a2 2 0 0 0-2 2V20a1.5 1.5 0 0 1 1.5-1.5H20Z"/></svg>'};
+function tabbar(L,path){
+  const sec = path===P.home?'home':path===P.book?'book':path===P.services||path.startsWith('services/')?'services':path===P.hoods||path.startsWith('eugene/')?'areas':path===P.guides||path.startsWith('guides/')?'guides':'';
+  const hasForm = ![P.faq,P.thanks,P.privacy,P.map].includes(path);
+  const item = (k,href,label,mid=false) => `<a class="tb${mid?' tb-mid':''}${sec===k?' on':''}" href="${href}"${sec===k?' aria-current="page"':''}><span class="tb-ic">${TB_IC[k]}</span><span class="tb-l">${label}</span></a>`;
+  return `<nav class="tabbar" aria-label="Quick navigation">${item('home',L(P.home),'Home')}${item('services',L(P.services),'Services')}${item('book',hasForm&&path!==P.book?'#book':L(P.book),'Book',true)}${item('areas',L(P.hoods),'Areas')}${item('guides',L(P.guides),'Guides')}</nav>`;
+}
+
 function layout({path,title,desc,body,ld=[],noindex=false,crumbs}){
   const r = '../'.repeat(path.split('/').length-1);
   const L = p => r+p;
@@ -56,6 +70,7 @@ ${body(L)}
 </div>
 <div class="legal"><span>© ${YEAR} ${esc(BRAND)} · Eugene, Oregon</span><span>Serving Eugene ZIP codes 97401, 97402, 97403, 97404, 97405 and 97408</span></div>
 </div></footer>
+${tabbar(L,path)}
 <script src="${L('assets/site.js')}"></script>
 </body></html>`;
   pages.push({path,title,noindex,html});

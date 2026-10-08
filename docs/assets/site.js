@@ -1,7 +1,8 @@
 (function(){
   var LEAD_EMAIL = 'mckenna.jbannister@gmail.com';
   var t = document.querySelector('.menu-toggle'), m = document.querySelector('.menu');
-  if (t && m) t.addEventListener('click', function(){ var o = m.classList.toggle('open'); t.setAttribute('aria-expanded', o); });
+  if (t && m) t.addEventListener('click', function(){ var o = m.classList.toggle('open'); t.setAttribute('aria-expanded', o); document.body.classList.toggle('menu-open', o); });
+  if (m) m.addEventListener('click', function(e){ if (e.target.closest('a')) { m.classList.remove('open'); document.body.classList.remove('menu-open'); if (t) t.setAttribute('aria-expanded', false); } });
   document.querySelectorAll('form.lead-form').forEach(function(f){
     var page = f.querySelector('[name="Page"]'); if (page) page.value = document.title + ' — ' + location.pathname;
     var s = f.querySelector('.form-status');
