@@ -203,3 +203,42 @@ const SITE_FAQS = [
  ['How do you handle keys?','Keys are kept secure and labeled without your address, or we use your lockbox or smart lock.'],
  ['Is Chuck & Co. locally owned?','Yes, Chuck & Co. Pet Care is locally owned and operated in Eugene, Oregon.']
 ];
+
+
+// ── Chuck Norris memorial: the owner's own words, verbatim. Lines starting ">" render as pull quotes.
+// Add real photos of Chuck to docs/assets/img/chuck/ and list them here: {src:"chuck-1.jpg", alt:"…", caption:"…"}
+const CHUCK = {
+  title: "In Loving Memory of Chuck Norris 🐾❤️",
+  paras: [
+  "My love for dogs started long before my dog-walking business, but one very special dog gave that love a deeper meaning. His name was Chuck Norris, and he is the reason I wanted to build something that celebrates the incredible bond between people and their dogs.",
+  "Chuck was born to my dog Luna, and he was the runt of the litter. He was so little, but he was already so full of life and energy. I begged my parents to let me keep him because I knew I wanted him to be part of my life. Looking back, I had no idea just how much that tiny puppy would change me.",
+  "As Chuck grew up, his personality only got bigger. He was the craziest, most energetic dog I had ever known. He was always running around, getting into things, finding ways to make a mess, and filling the house with life. He absolutely loved water, and he had a way of making even the most ordinary moments entertaining. He would whine so loudly that it sounded like he was talking to us, and sometimes, when he looked at me, it genuinely felt like he understood everything I was thinking.",
+  ">But underneath all that chaos was the sweetest bond I had ever experienced with a dog.",
+  "Whenever I came home, Chuck greeted me as if I had been gone forever. He would take my hand gently in his mouth and lead me to my room, where we would curl up together. He always wanted to be close to me. I had grown up with dogs my entire life, but the connection I shared with Chuck was different. He was my companion through some of the hardest moments of my life. When things felt overwhelming, he gave me comfort without needing to understand a single word I said. His presence made me feel less alone.",
+  "Chuck was also my protector. He was there for moments that changed my life, and the love and security I felt with him are things I will never forget. He was only part of my life for two years, but those years left a mark on my heart that will never disappear.",
+  "Losing Chuck was devastating. After my graduation, I learned that he had collapsed and suffered seizures after becoming extremely excited when everyone came home while looking for me. He passed away before reaching the veterinarian. I was later told that he had an unknown heart condition. I never got to say goodbye the way I wish I could have, and I would give anything for one more day with him — one more walk, one more cuddle, or one more of his loud little conversations.",
+  ">Although I cannot bring Chuck back, I can carry the love he gave me into everything I do.",
+  "That is why this dog-walking business is so personal to me. It is not simply about taking dogs for walks. It is about giving them the patience, attention, safety, companionship, and affection they deserve. It is about understanding that every dog has a unique personality, their own little quirks, and a whole heart full of love to give.",
+  "I know what it feels like to have a dog who is family. I know how much joy they bring into a home, how they can comfort us without saying a word, and how deeply they become part of our lives. Every dog deserves to feel loved, protected, and excited for the adventures ahead of them.",
+  "Through this business, I hope to give other dogs the same love and care I gave Chuck. Every walk, every wagging tail, and every new friendship is another way to honor the little puppy I fought to keep — the tiniest one in the litter who turned out to have the biggest place in my heart.",
+  "Chuck Norris will always be my boy. He will always be part of the reason I do what I do, and his memory will walk beside me wherever this journey takes me.",
+  "This business is for you, Chuck. Thank you for teaching me what it means to love a dog with your whole heart."
+],
+  closing: ["Forever my little runt.","Forever my best friend.","Forever loved."],
+  photos: [
+    {src:"chuck-sled.jpg", alt:"McKenna sledding in the snow with Chuck as a red-gold puppy in her lap", caption:"Snow day with puppy Chuck"},
+    {src:"chuck-stairs.jpg", alt:"McKenna laughing on the stairs as Chuck gives her a kiss", caption:"Always wanted to be close"},
+    {src:"chuck-graduation.jpg", pos:"30% 12%", alt:"McKenna in her purple graduation cap and gown holding Chuck's paw", caption:"Graduation day with my boy"}
+  ]
+};
+
+// ── Meet your caregivers. Real names, bios and photos only (photos go in docs/assets/img/team/).
+// {name:"…", role:"…", bio:["paragraph", …], photo:"name.jpg", alt:"…"}
+const CAREGIVERS = [
+  {name:"McKenna", role:"Co-founder", photo:"mckenna.jpg", alt:"McKenna laughing on the stairs with Chuck",
+   bio:["McKenna has grown up with dogs her entire life. Chuck & Co. is named for Chuck Norris, the runt of her dog Luna’s litter and her best friend, whose story is the heart of this business.",
+        "She started Chuck & Co. to give every dog the patience, attention, safety, companionship and affection they deserve."],
+   link:true},
+  {name:"Nora", role:"Co-founder", photo:"nora.jpg", alt:"Nora holding a small black-and-tan dog",
+   bio:["Nora co-founded Chuck & Co. with McKenna."]}
+];
