@@ -1,4 +1,4 @@
-const SITE = 'https://www.chuckandcopetcare.com';
+const SITE = 'https://chuckandcopetcare.com';
 const BRAND = 'Chuck & Co. Pet Care';
 
 const SERVICES = [

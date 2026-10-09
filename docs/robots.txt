@@ -2,4 +2,4 @@ User-agent: *
 Allow: /
 Disallow: /thank-you
 
-Sitemap: https://www.chuckandcopetcare.com/sitemap.xml
+Sitemap: https://chuckandcopetcare.com/sitemap.xml
