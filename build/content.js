@@ -240,5 +240,5 @@ const CAREGIVERS = [
         "She started Chuck & Co. to give every dog the patience, attention, safety, companionship and affection they deserve."],
    link:true},
   {name:"Nora", role:"Co-founder", photo:"nora.jpg", alt:"Nora holding a small black-and-tan dog",
-   bio:["Nora co-founded Chuck & Co. with McKenna."]}
+   bio:["Nora has been around dogs her whole life and simply loves all animals, but dogs in particular.","She is very excited to be working with Kenna, and to meet her new animal buddies."]}
 ];
